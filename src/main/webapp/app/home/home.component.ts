@@ -33,4 +33,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.authSubscription.unsubscribe();
     }
   }
+
+  handleClick(): void {
+    // tslint:disable-next-line:no-console
+    console.log('handleClick()');
+  }
 }
