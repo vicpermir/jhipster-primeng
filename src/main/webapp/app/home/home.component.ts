@@ -13,8 +13,23 @@ import { Account } from 'app/core/user/account.model';
 export class HomeComponent implements OnInit, OnDestroy {
   account: Account | null = null;
   authSubscription?: Subscription;
+  data: any;
 
-  constructor(private accountService: AccountService, private loginModalService: LoginModalService) {}
+  constructor(private accountService: AccountService, private loginModalService: LoginModalService) {
+    this.data = {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      datasets: [
+          {
+              label: 'First Dataset',
+              data: [65, 59, 80, 81, 56, 55, 40]
+          },
+          {
+              label: 'Second Dataset',
+              data: [28, 48, 40, 19, 86, 27, 90]
+          }
+      ]
+    };
+  }
 
   ngOnInit(): void {
     this.authSubscription = this.accountService.getAuthenticationState().subscribe(account => (this.account = account));
@@ -35,7 +50,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   handleClick(): void {
-    // tslint:disable-next-line:no-console
-    console.log('handleClick()');
+    console.log('handleClick()'); // eslint-disable-line no-console
   }
 }

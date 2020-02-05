@@ -36,6 +36,8 @@
 
         <p-button label="Click" (onClick)="handleClick($event)"></p-button>
 
+        <p-chart type="line" [data]="data" height="300"></p-chart>
+
         <p>
             <span jhiTranslate="home.like">If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer" jhiTranslate="home.github">GitHub</a>!
         </p>
