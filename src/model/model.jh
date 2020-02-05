@@ -1,0 +1,38 @@
+
+entity UserExtended
+
+entity Friend {
+    status Boolean
+    modified LocalDate
+    created LocalDate
+}
+
+entity Post {
+    content String
+    dateCreated LocalDate
+}
+
+entity Like {
+    dateCreated LocalDate
+}
+
+entity Comment {
+    dateCreated LocalDate
+}
+
+relationship OneToOne {
+    UserExtended{user(login)} to User
+}
+
+relationship ManyToOne {
+    Post{owner} to UserExtended
+    Comment{postedBy} to UserExtended
+    Like{likedBy} to UserExtended
+    Friend{user} to UserExtended
+}
+
+relationship OneToMany {
+    UserExtended{friends} to Friend
+    Post{likes} to Like
+    Post{comments} to Comment
+}
