@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   authSubscription?: Subscription;
   data: any;
   cities: any[];
-  selectedCities: any[];
+  selectedCities: SelectItem[];
 
   constructor(private accountService: AccountService, private loginModalService: LoginModalService) {
     this.data = {
