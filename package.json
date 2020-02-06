@@ -30,6 +30,7 @@
     "ngx-cookie": "4.0.2",
     "ngx-infinite-scroll": "8.0.1",
     "ngx-webstorage": "4.0.1",
+    "primeicons": "^2.0.0",
     "primeng": "^8.1.1",
     "rxjs": "6.5.3",
     "swagger-ui-dist": "3.24.3",
