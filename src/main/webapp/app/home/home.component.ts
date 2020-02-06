@@ -5,6 +5,8 @@ import { LoginModalService } from 'app/core/login/login-modal.service';
 import { AccountService } from 'app/core/auth/account.service';
 import { Account } from 'app/core/user/account.model';
 
+import { SelectItem } from 'primeng/api';
+
 @Component({
   selector: 'jhi-home',
   templateUrl: './home.component.html',
@@ -14,6 +16,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   account: Account | null = null;
   authSubscription?: Subscription;
   data: any;
+  cities: any[];
+  selectedCities: any[];
 
   constructor(private accountService: AccountService, private loginModalService: LoginModalService) {
     this.data = {
@@ -29,6 +33,14 @@ export class HomeComponent implements OnInit, OnDestroy {
           }
       ]
     };
+    this.cities = [
+      {name: 'New York', code: 'NY'},
+      {name: 'Rome', code: 'RM'},
+      {name: 'London', code: 'LDN'},
+      {name: 'Istanbul', code: 'IST'},
+      {name: 'Paris', code: 'PRS'}
+    ];
+    this.selectedCities = [];
   }
 
   ngOnInit(): void {
